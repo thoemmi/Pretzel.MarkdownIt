@@ -7,6 +7,7 @@ public class MarkdownItEngine : ILightweightMarkupEngine {
     static readonly Func<object, Task<object>> _markdownItFunc = Edge.Func(@"
 var hljs  = require('highlight.js');
 var md = require('markdown-it')({
+  html: true,
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {

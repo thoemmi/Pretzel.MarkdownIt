@@ -16,4 +16,4 @@ So I took Jérémie's plugin as a template and threw in Harry's code. Now I have
 
 ### Installation
 
-Installation is as easy as unzipping the latest [release](https://github.com/thoemmi/Pretzel.MarkdownIt/releases) in the `_plugins` folder of your Pretzel site.
+Download the [latest release](https://github.com/thoemmi/Pretzel.MarkdownIt/releases) and copy its content to the `_plugins` folder of your Pretzel site.

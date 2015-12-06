@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- make all references non-private except EdgeJs, so they won't be copied to the output folder -->
+  <Target Name="ClearReferenceCopyLocalPaths" AfterTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPathsExceptEdgeJs Include="@(ReferenceCopyLocalPaths)" Condition="'%(Filename)' != 'EdgeJs'" />
+    </ItemGroup>
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPathsExceptEdgeJs)" />
+    </ItemGroup>
+  </Target>
+
+  <!--copy node_modules to output dir -->
+  <Target Name="AddNodeModulesForCopyingToOutputFolder" AfterTargets="BeforeBuild">
+    <ItemGroup>
+      <None Include="node_modules/**">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+  </Target>
+</Project>

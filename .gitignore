@@ -1,2 +1,10 @@
-/temp
-/artifacts
+packages/
+node_modules/
+
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
